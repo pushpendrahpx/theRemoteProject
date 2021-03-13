@@ -6,6 +6,7 @@ const nets = networkInterfaces();
 
 
 export default function ParentServer(){
+  console.log(nets)
   return <>
   <a>Server Wi-Fi Ip Details</a>
   <table className="table-striped">
@@ -21,8 +22,8 @@ export default function ParentServer(){
     </tr>
   </thead>
   <tbody>
-    {nets["Wi-Fi"].map(each=>{
-      return <tr>
+    {nets["wlp3s0"].map(each=>{
+      return <tr key={each.address}>
       <td>{each.address}</td>
         <td>{each.netmask}</td>
         <td>{each.family}</td>
